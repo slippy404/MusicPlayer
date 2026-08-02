@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MusicPlayer.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MusicPlayer"
+    Title="MusicPlayer">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+</Shell>
+
+<!-- defines the main pages of the app and how to reach them -->
+<Shell.FlyoutItems>
+    
+    <!-- search saved songs in the library -->
+    <FlyoutItem Title="Library">
+        <ShellContent ContentTemplate="{DataTemplate views:LibraryPage}" />
+    </FlyoutItem>
+        
+    <!-- create, edit and delete playlists -->
+    <FlyoutItem Title="Playlists">
+        <ShellContent ContentTemplate="{DataTemplate views:PlaylistsPage}" />
+    </FlyoutItem>
+    
+    <!-- shows song being played + controls -->
+    <FlyoutItem Title="Now Playing">
+        <ShellContent ContentTemplate="{DataTemplate views:NowPlayingPage}" />
+    </FlyoutItem>
+    
+    <!-- theme, order and other settings -->
+    <FlyoutItem Title="Settings">
+        <ShellContent ContentTemplate="{DataTemplate views:SettingsPage}" />
+    </FlyoutItem>
+</Shell.FlyoutItems>
